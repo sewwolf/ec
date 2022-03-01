@@ -1,6 +1,10 @@
 <%= form_with scope: :session, local: true do |f|%>
-  <%= f.text_field :email %>
-  <%= f.password_field :password %>
+  <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+  </div>
+    <%= f.text_field :email %>
+    <%= f.password_field :password %>
 
-  <%= f.submit 'ログイン'%>
+    <%= f.submit 'ログイン'%>
 <% end %>
