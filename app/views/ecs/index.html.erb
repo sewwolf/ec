@@ -1,4 +1,5 @@
 <header class='top-page-header'>
+  <%= flash[:notice] %>
   <div class='search-bar-contents'>
    
     <form class="search-form" action="#">
@@ -13,13 +14,13 @@
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
-      
-  
+      <% if current_user %>
+      <li><%= link_to current_user.first_name, "#", class: "user-nickname" %></li> 
       <li><%= link_to 'ログアウト', logout_path, method: :delete, class: "logout" %></li> 
-   
+      <% else%>
       <li><%= link_to 'ログイン', login_path, class: "login" %></li>
       <li><%= link_to '新規登録', new_user_path, class: "sign-up" %></li>
-  
+      <% end %>
       
     </ul>
   </div>

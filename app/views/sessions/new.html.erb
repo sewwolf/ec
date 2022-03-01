@@ -1,6 +1,6 @@
 <%= form_with scope: :session, local: true do |f|%>
   <div class='login-flash-message'>
-      <%= flash[:notice] %>
+      <%= flash[:notice] %> 
       <%= flash[:alert] %>
   </div>
     <%= f.text_field :email %>

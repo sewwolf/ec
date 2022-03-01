@@ -1,0 +1,18 @@
+ja:
+     activemodel:
+        attributes:
+            user_address:
+                email: メールアドレス
+                password: パスワード
+                password_confirmation: パスワード(確認用)
+                first_name: 名字
+                last_name: 名前
+                kana_first_name: 名字(カナ)
+                kana_last_name: 名前(カナ)
+                telephone_number: 電話番号
+                gender: ''
+                birthday: ''
+                postal_code: 郵便番号
+                area: ''
+                municipality: 市区町村
+                street_number: 番地
