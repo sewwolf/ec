@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_03_08_065011) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -24,6 +25,9 @@ ActiveRecord::Schema.define(version: 2022_03_08_065011) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
+
+ActiveRecord::Schema.define(version: 0) do
+
 
   create_table "carts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -57,9 +61,15 @@ ActiveRecord::Schema.define(version: 2022_03_08_065011) do
     t.integer "gender", default: 0, null: false
     t.string "telephone_number", null: false
     t.date "birthday", null: false
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
 
   add_foreign_key "addresses", "users"
   add_foreign_key "items", "carts"

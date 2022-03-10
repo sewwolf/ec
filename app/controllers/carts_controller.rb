@@ -7,14 +7,14 @@ class CartsController < ApplicationController
   def create
     if my_cart.add_item(product_id: params[:product_id], quantity: params[:quantity])
     else
-  
+
     end
   end
 
   def update
     if my_cart.update_item(product_id: params[:product_id], quantity: params[:quantity])
     else
-  
+
     end
   end
 
@@ -25,6 +25,9 @@ class CartsController < ApplicationController
     end
   end
 
+    end
+  end
+  
   private
 
   def my_cart

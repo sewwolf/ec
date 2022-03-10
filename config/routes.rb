@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :carts, only: %i[create destroy] do
     resources :items, only: %i[create destroy update index], param: :item_id, controller: :cart_items
   end
+
 end
