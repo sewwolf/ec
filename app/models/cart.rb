@@ -1,5 +1,4 @@
 class Cart < ApplicationRecord
-  class Cart < ApplicationRecord
     has_many :items, dependent: :destroy
   
     def add_item(product_id:, quantity:)
