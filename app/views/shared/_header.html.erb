@@ -7,6 +7,9 @@
         <%= image_tag "search.png", class:"search-icon" %>
       </button>
     </form>
+
+    <div class = 'lists-right'>
+      <%= link_to '注文履歴', "/", class:"history" %>
     <div class = 'lists-right'>
       <%= link_to image_tag('cart-icon.png', class:"cart-icon"), "/" %>
       <ul class='user-list'>
@@ -16,6 +19,10 @@
          <% if current_user %>
           <li><%= link_to current_user.first_name, "#", class: "user-nickname" %></li> 
           <li><%= link_to 'ログアウト', logout_path, method: :delete, class: "logout" %></li> 
+          <% unless current_user.admin.nil? %>
+          <li><%= link_to '管理ページ', admin_users_path, class:"admin-link"%></li> 
+          <% end %>
+
          <% else %>
           <li><%= link_to 'ログイン', login_path, class: "login" %></li>
           <li><%= link_to '新規登録', new_user_path, class: "sign-up" %></li>
@@ -23,8 +30,6 @@
          </ul>
         </li>
       </ul>
-      <%= link_to '注文履歴', "/", class:"history" %>
-      </div>
 
   </div>
   <div class='nav'>
@@ -32,7 +37,7 @@
       <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
-      
+
     </ul>
   </div>
 </header>
