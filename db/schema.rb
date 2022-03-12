@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2022_03_08_065011) do
-
+ActiveRecord::Schema.define(version: 2022_03_12_163845) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
@@ -27,9 +25,6 @@ ActiveRecord::Schema.define(version: 2022_03_08_065011) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-ActiveRecord::Schema.define(version: 0) do
-
-
   create_table "carts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -38,7 +33,7 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "cart_id", null: false
     t.bigint "product_id", null: false
-    t.integer "quantity"
+    t.integer "quantity", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cart_id"], name: "index_items_on_cart_id"
@@ -46,8 +41,10 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
+    t.binary "image", null: false
+    t.string "name", null: false
+    t.text "detail", null: false
+    t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,11 +59,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "gender", default: 0, null: false
     t.string "telephone_number", null: false
     t.date "birthday", null: false
-  end
-
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
