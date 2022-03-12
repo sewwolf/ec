@@ -1,19 +1,18 @@
 .search-bar-contents {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .ec-icon {
   width: 10vw;
-  margin-right: 10vw;
+  margin-right: 50px;
 }
 
 .search-form {
   width: 50vw;
   height: 5vh;
   display: flex;
-  margin-right: 50px;
+  margin-right: 200px;
 }
 
 .search-form>.input-box {
@@ -35,6 +34,18 @@
   width: 100%;
 }
 
+.cart-icon {
+  width: 25px;
+  margin-right: 50px;
+}
+
+.user-icon {
+  width: 25px;
+}
+
+.history {
+  color: black;
+}
 .nav {
   font-size: 18px;
   display: flex;
@@ -66,22 +77,41 @@
 
 .lists-right {
   display: flex;
-  list-style: none;
+ 
+}
+
+.user-list {
   align-items: flex-end;
 }
 
+.user-list  li {
+  list-style: none;
+  position: relative;
+}
+
+.user-list li li {
+  height: 0;
+  overflow: hidden;
+  transition: .9s;
+  font-style: italic; 
+}
+
+.user-list li:hover > ul > li {
+  height: 2rem;
+  overflow: visible;
+}
 
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
 
 .logout {
   text-decoration: none;
-  color: white;
+  color: black;
   margin-right: 50px;
 }
 
@@ -89,11 +119,11 @@
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
-  color: white;
+  color: black;
 }
 
 .sign-up {
   text-decoration: none;
-  color: white;
+  color: black;
   margin-right: 50px;
 }
