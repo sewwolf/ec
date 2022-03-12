@@ -6,4 +6,10 @@ Rails.application.routes.draw do
 
   resources :ecs, only: [:index]
   resources :users, only: %i[new create]
+  resources :items, only: [:new, :edit, :destroy]
+
+  namespace :admin do
+    resources :users
+  end
+
 end

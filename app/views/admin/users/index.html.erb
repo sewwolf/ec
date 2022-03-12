@@ -1,0 +1,20 @@
+<div class='form-header'>
+  <h1 class='form-header-text'>
+      管理画面
+  </h1>
+<div class='admin-header'>
+  <%= link_to '商品出品', new_item_path, class:'admin-link'%>
+  <%= link_to '商品削除', "#", class:'admin-link'%>
+  <%= link_to '終了', root_path, class:'admin-link'%>
+</div>
+</div>
+
+<label class="form-text">ユーザー一覧</label>
+<% @users.each do |user| %>
+<div class="box1">
+  <%= "ID :  #{user.id} - #{user.first_name}#{user.last_name}" %>
+  </div>
+<% end %>
+
+<label class="form-text">出品商品一覧</label>
+<%# @items.each do |item| %>

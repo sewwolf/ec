@@ -8,6 +8,7 @@
       </button>
     </form>
     <div class = 'lists-right'>
+      <%= link_to '注文履歴', "/", class:"history" %>
       <%= link_to image_tag('cart-icon.png', class:"cart-icon"), "/" %>
       <ul class='user-list'>
        <li>
@@ -23,7 +24,10 @@
          </ul>
         </li>
       </ul>
-      <%= link_to '注文履歴', "/", class:"history" %>
+      <% if current_user.admin? %>
+      <%= link_to '管理ページ', admin_users_path, class:"admin-link"%>
+      <% else %>
+      <% end %>
       </div>
 
   </div>
