@@ -19,5 +19,6 @@ class Cart < ApplicationRecord
     def total_price
       items.sum("quantity*price")
     end
+
   end
 end

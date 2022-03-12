@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 2022_03_08_065011) do
 
+
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
     t.integer "area", default: 0, null: false
@@ -69,7 +70,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
 
   add_foreign_key "addresses", "users"
   add_foreign_key "items", "carts"
